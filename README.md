@@ -23,6 +23,28 @@ repository-topics:
 [![PyPI](https://img.shields.io/pypi/v/memexa?label=PyPI)](https://pypi.org/project/memexa/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](pyproject.toml)
 
+## Live product & benchmark
+
+- Official website and product demo: [memexa.cn](https://memexa.cn)
+- Windows installer: [GitHub Releases](https://github.com/labazhou2024/memexa/releases/latest)
+
+The full Memexa system currently reports the following public results on the
+[ATM-Bench leaderboard](https://atmbench.github.io/leaderboard.html#leaderboard):
+
+| Benchmark | QS | Recall@10 |
+|---|---:|---:|
+| ATM-Bench | 68.04%* | 79.09% |
+| ATM-Bench-Hard | 47.85%* | 44.67%† |
+
+These results describe the full product system submitted to ATM-Bench. The
+smaller open demo in this repository does not include that full engine.
+
+\* QS was scored with the leaderboard's DeepSeek-V4-flash judge and is not
+directly comparable to entries judged with gpt-5-mini.
+
+† Recall@10 uses the fixed Qwen3-VL-2B captions supplied by ATM-Bench, enabling
+like-for-like recall comparison.
+
 ## What this is
 
 memexa turns scattered, multi-party Chinese data into a queryable

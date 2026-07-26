@@ -41,8 +41,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/labazhou2024/memexa"
-Documentation = "https://github.com/labazhou2024/memexa/tree/main/docs"
+Homepage = "https://memexa.cn"
+Repository = "https://github.com/labazhou2024/memexa"
+Benchmark = "https://atmbench.github.io/leaderboard.html#leaderboard"
 Issues = "https://github.com/labazhou2024/memexa/issues"
 
 [project.scripts]
