@@ -21,6 +21,27 @@ repository-topics:
 [![PyPI](https://img.shields.io/pypi/v/memexa?label=PyPI)](https://pypi.org/project/memexa/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](pyproject.toml)
 
+## 官网与公开基准
+
+- 官网及产品演示：[memexa.cn](https://memexa.cn)
+- Windows 安装包：[GitHub Releases](https://github.com/labazhou2024/memexa/releases/latest)
+
+完整 Memexa 系统目前在
+[ATM-Bench 官方榜单](https://atmbench.github.io/leaderboard.html#leaderboard)上的公开成绩如下：
+
+| 基准 | QS | Recall@10 |
+|---|---:|---:|
+| ATM-Bench | 68.04%* | 79.09% |
+| ATM-Bench-Hard | 47.85%* | 44.67%† |
+
+这些结果对应提交到 ATM-Bench 的完整产品系统；本仓库提供的精简开源 demo
+不包含该完整引擎。
+
+\* QS 使用榜单的 DeepSeek-V4-flash judge 评分，不能与使用 gpt-5-mini judge
+的条目直接比较。
+
+† Recall@10 使用 ATM-Bench 提供的固定 Qwen3-VL-2B captions，召回结果可按同一口径比较。
+
 ## 这是什么
 
 memexa 把散落、多方的中文数据组织成一张可查询的记忆图谱：每条消息**逐字**保存，抽取成结构化记忆卡，每个答案都能**引用回原句**。完全自托管——你的数据不离开本机。
