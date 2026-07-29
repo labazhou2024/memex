@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "memexa"
 version = "0.1.0"
-description = "Open demo of memexa — a self-hosted Chinese personal memory graph. The full engine is the proprietary memexa product."
+description = "Open demo of Memexa's traceable personal memory card and query contract."
 readme = "README.md"
 license = "Apache-2.0"
 license-files = ["LICENSE"]
@@ -13,8 +13,8 @@ authors = [{ name = "labazhou2024" }]
 maintainers = [{ name = "labazhou2024" }]
 requires-python = ">=3.10"
 keywords = [
-    "personal-memory", "knowledge-graph", "chinese-nlp",
-    "retrieval-augmented-generation", "self-hosted", "demo",
+    "agent-memory", "long-term-memory", "personal-ai",
+    "knowledge-graph", "chinese-nlp", "local-first", "demo",
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
