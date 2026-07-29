@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
     <source media="(max-width: 640px)" srcset="docs/assets/readme/memexa-hero-state-en-mobile.webp">
-    <img src="docs/assets/readme/memexa-hero-state-en.webp" alt="Memexa resolves changing history into verified current state and evidence for the next agent" width="100%">
+    <img src="docs/assets/readme/memexa-hero-state-en.webp" alt="Memexa helps AI remember the whole you through traceable memory across every stage of life" width="100%">
   </picture>
 </p>
 

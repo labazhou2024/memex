@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
     <source media="(max-width: 640px)" srcset="docs/assets/readme/memexa-hero-state-zh-mobile.webp">
-    <img src="docs/assets/readme/memexa-hero-state-zh.webp" alt="Memexa 镜我把不断变化的历史整理成当前状态，并为下一位 Agent 保留证据" width="100%">
+    <img src="docs/assets/readme/memexa-hero-state-zh.webp" alt="Memexa 镜我让 AI 记得完整的你，并把人生经历整理成可追溯、可继续的记忆" width="100%">
   </picture>
 </p>
 
