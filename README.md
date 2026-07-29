@@ -1,94 +1,152 @@
-<!--
-repository-topics:
-  - personal-memory
-  - knowledge-graph
-  - chinese-nlp
-  - self-hosted
-  - llm
-  - mcp
-  - demo
--->
+<p align="center">
+  <picture>
+    <source media="(max-width: 640px)" srcset="docs/assets/readme/memexa-hero-state-en-mobile.webp">
+    <img src="docs/assets/readme/memexa-hero-state-en.webp" alt="Memexa resolves changing history into verified current state and evidence for the next agent" width="100%">
+  </picture>
+</p>
 
-# Memexa · 镜我
+<p align="center">
+  <strong>A traceable personal memory layer that carries verified state across apps, models, and agents.</strong>
+</p>
 
-**English** · [中文](README.zh.md)
+<p align="center">
+  <a href="https://github.com/labazhou2024/memexa/releases/download/v0.1.0/Memexa_Internal_Test_20260722_F036FCB5_R3.zip"><strong>Download for Windows</strong></a> ·
+  <a href="#run-the-open-demo">Run the source demo</a> ·
+  <a href="https://memexa.cn">Product overview</a> ·
+  <a href="README.zh.md">简体中文</a>
+</p>
 
-> A self-hosted personal memory graph over Chinese-native data —
-> WeChat / QQ / email / documents / audio.
-> **This repository is the open demo. The full engine is a separate
-> proprietary product.**
+<p align="center">
+  <a href="https://github.com/labazhou2024/memexa/actions/workflows/ci.yml"><img src="https://github.com/labazhou2024/memexa/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-2b718d.svg" alt="Apache 2.0"></a>
+  <a href="https://pypi.org/project/memexa/"><img src="https://img.shields.io/pypi/v/memexa?label=PyPI&color=2d8f80" alt="PyPI"></a>
+  <a href="pyproject.toml"><img src="https://img.shields.io/badge/Python-3.10%2B-4f7079.svg" alt="Python 3.10+"></a>
+</p>
 
-[![CI](https://github.com/labazhou2024/memexa/actions/workflows/ci.yml/badge.svg)](https://github.com/labazhou2024/memexa/actions/workflows/ci.yml)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-[![PyPI](https://img.shields.io/pypi/v/memexa?label=PyPI)](https://pypi.org/project/memexa/)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](pyproject.toml)
+## Start with the product
 
-## Live product & benchmark
+| I want to… | Start here |
+|---|---|
+| **Try the desktop product** | Download the [Windows 10/11 x64 internal preview](https://github.com/labazhou2024/memexa/releases/download/v0.1.0/Memexa_Internal_Test_20260722_F036FCB5_R3.zip), then follow the setup and privacy guide in the archive. |
+| **Inspect the memory contract** | Run `pip install memexa` and `memexa demo`. No backend, model key, or configuration is required. |
+| **Understand the full product** | Read the product overview at [memexa.cn](https://memexa.cn). |
 
-- Official website and product demo: [memexa.cn](https://memexa.cn)
-- Windows installer: [GitHub Releases](https://github.com/labazhou2024/memexa/releases/latest)
+The Windows preview is not yet code-signed. SmartScreen may show a warning;
+verify the filename and SHA-256 values in the
+[release notes](https://github.com/labazhou2024/memexa/releases/tag/v0.1.0)
+before running it.
 
-The full Memexa system currently reports the following public results on the
-[ATM-Bench leaderboard](https://atmbench.github.io/leaderboard.html#leaderboard):
+## The missing layer between history and the next action
 
-| Benchmark | QS | Recall@10 |
-|---|---:|---:|
-| ATM-Bench | 68.04%* | 79.09% |
-| ATM-Bench-Hard | 47.85%* | 44.67%† |
+Agents can already write code, complete forms, and prepare documents. The
+failure appears when work crosses a session, app, model, or collaborator:
+history remains available, but its **current meaning** does not.
 
-These results describe the full product system submitted to ATM-Bench. The
-smaller open demo in this repository does not include that full engine.
+An old plan and the decision that replaced it may both be retrieved. A machine
+address may be remembered after the service moved. A checklist may be found
+without showing which items are still missing. More context does not solve
+this; the next agent needs resolved state.
 
-\* QS was scored with the leaderboard's DeepSeek-V4-flash judge and is not
-directly comparable to entries judged with gpt-5-mini.
+Memexa gives it three things:
 
-† Recall@10 uses the fixed Qwen3-VL-2B captions supplied by ATM-Bench, enabling
-like-for-like recall comparison.
+- **What changed** — which decisions, versions, and facts replaced earlier ones.
+- **What still holds** — the current goal, constraints, owners, and open gaps.
+- **Why it can be trusted** — the messages, documents, sessions, or commits
+  behind each important claim.
 
-## What this is
+The result is not a longer transcript. It is a compact, evidence-backed handoff
+for the next action.
 
-memexa turns scattered, multi-party Chinese data into a queryable
-memory graph: every message is stored **verbatim**, extracted into
-structured cards, and every answer is **cited back to the original
-sentence**. It is fully self-hosted — your data never leaves your
-machine.
+## Three real tasks, one memory layer
 
-This repository ships the **open demo**: a small synthetic dataset and a
-stub extractor, so you can see the shape of the project in thirty
-seconds — no backend, no API key, no configuration.
+<p align="center">
+  <img src="docs/assets/readme/memexa-product-proof-en.webp" alt="Three de-identified product workflows: complete a multi-page form, continue a backend incident across sessions, and prepare for a visa appointment" width="100%">
+</p>
 
-## Try the demo
+These are de-identified product workflows, not generated interface mockups:
+
+1. **Public-record filing:** one instruction became a multi-page draft; known
+   facts were filled in and missing material stayed visible.
+2. **Backend incident:** a new agent recovered the target machine, service
+   state, prior diagnosis, and the “backend only” change boundary before
+   verifying the live path.
+3. **Visa appointment:** the appointment, checklist, and existing files became
+   an action-ready pack; uncertain items still required human confirmation.
+
+Agents performed the work. Memexa supplied the continuous, verifiable context
+that let each task resume from the right point.
+
+## How Memexa carries work forward
+
+1. **Keep the source.** Imported material retains its origin and time instead
+   of becoming an untraceable summary.
+2. **Resolve the history.** People, events, decisions, versions, and
+   relationships are organized across sources.
+3. **Maintain current state.** Replacement, rejection, confirmation, and
+   unresolved gaps remain explicit.
+4. **Deliver the minimum useful context.** The next agent receives the facts,
+   constraints, and evidence needed for the current task—not the entire
+   archive.
+
+Personal memory stays on the user's device by default. The user chooses which
+sources to import and what context a connected agent may receive.
+
+## Run the open demo
 
 ```bash
-pip install memexa
+python -m pip install memexa
 memexa demo
 ```
 
-Six synthetic sources (WeChat / QQ / email / browser / AI chat / audio)
-are ingested with the stub extractor, then five sample queries run
-against the resulting cards — entirely in memory. This is the honest
-first look at what the project does.
+The demo loads six bundled sets of synthetic records—WeChat, QQ, email,
+browser history, AI chat, and audio—and builds queryable memory cards entirely
+in memory.
 
-## The full engine
+It shows:
 
-The demo runs a stub on synthetic data. The full **memexa** engine is a
-proprietary product and is **not** included in this repository. It adds:
+- a memory card that keeps source, time, people, narrative, and evidence
+  together;
+- the same history queried by person, timeline, commitment, or topic;
+- how delivered context can be checked against its original source.
 
-- **Live ingestion** of your own data across multiple sources, incremental.
-- A **two-LLM extraction pipeline** producing cards with per-claim
-  citations and cross-alias canonical identities.
-- A **multi-channel recall stack** with cross-encoder re-ranking — built
-  for high-accuracy retrieval over messy, multi-party Chinese chat, not a
-  single-vector lookup.
-- An **MCP server + CLI**, so any coding agent (Claude Code, Cursor,
-  Cline, Codex) can use your memory as a first-class tool.
-- A **local desktop app** — runs the whole stack on your own machine.
+To run it from a clone:
 
-For access to the full engine, please reach out via the repository
-owner's profile.
+```bash
+git clone https://github.com/labazhou2024/memexa.git
+cd memexa
+python -m memexa.cli.main demo
+python -m pytest -q
+```
 
-## License
+## Source code and installer
 
-The demo in this repository is licensed under **Apache-2.0** (see
-[LICENSE](LICENSE)). The full memexa engine is a separate proprietary
-product and is not covered by that license.
+> [!IMPORTANT]
+> **The source code and the installer are different deliverables.** This
+> repository contains an Apache-2.0 open demo built around synthetic data. The
+> GitHub Release contains the Windows desktop product preview and its full
+> product capabilities. This repository is not the installer's complete source
+> tree, and the product-only capabilities in that installer are not licensed
+> under this repository's Apache-2.0 license.
+
+## Public benchmark
+
+On the public
+[ATM-Bench-Hard leaderboard](https://atmbench.github.io/leaderboard.html#leaderboard),
+the full Memexa system reports **47.85% QS** and **44.67% Recall@10**. QS
+measures final-answer quality; Recall@10 measures whether retrieval found the
+required evidence.
+
+QS was scored with the leaderboard's DeepSeek-V4-flash judge and should not be
+compared directly with entries judged by gpt-5-mini. Recall@10 uses the fixed
+Qwen3-VL-2B captions supplied by ATM-Bench.
+
+## Local-first by default
+
+- Import only the sources the user selects.
+- Keep personal memory on the user's own device by default.
+- Send connected agents only the context needed for the task.
+- Preserve source references for important facts.
+- Leave uncertain or consequential decisions to human confirmation.
+
+Memexa is built around a simple premise: work should not lose its verified
+state when a conversation ends.
